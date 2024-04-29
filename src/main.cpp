@@ -50,6 +50,7 @@ extern "C" {
 
         // Register the receive callback
         esp_err = esp_now_register_recv_cb(espNowReceiveWrapper);
+        
         if (esp_err != ESP_OK) {
             printf("Failed to register receive callback: %s\n", esp_err_to_name(esp_err));
             vTaskDelete(NULL); // Terminate the task
