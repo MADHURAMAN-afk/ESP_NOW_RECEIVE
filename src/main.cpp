@@ -9,7 +9,7 @@
 #include "nvs_flash.h"
 #include "esp_log.h"
 
-static const char *TAG = "esp_now_receiver";
+static const char *TAG = "Master";
 
 // Structure for received data
 typedef struct struct_message {
@@ -18,7 +18,7 @@ typedef struct struct_message {
     char message[32];
 } struct_message_t;
 
-// Updated callback function to match the expected signature
+
 static void esp_now_recv_cb(const esp_now_recv_info_t *recv_info, const uint8_t *data, int data_len) {
     struct_message_t *recv_data = (struct_message_t *) data;
 
